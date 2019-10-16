@@ -1,0 +1,660 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1775E53F235284C900D088C2 /* PRDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1775E53E235284C900D088C2 /* PRDAppDelegate.m */; };
+		1775E545235284C900D088C2 /* PRDMainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1775E544235284C900D088C2 /* PRDMainView.m */; };
+		1775E548235284C900D088C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1775E546235284C900D088C2 /* Main.storyboard */; };
+		1775E54A235284CB00D088C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1775E549235284CB00D088C2 /* Assets.xcassets */; };
+		1775E54D235284CB00D088C2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1775E54B235284CB00D088C2 /* LaunchScreen.storyboard */; };
+		1775E550235284CB00D088C2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1775E54F235284CB00D088C2 /* main.m */; };
+		1775E55A235284CB00D088C2 /* Predica_SelfTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1775E559235284CB00D088C2 /* Predica_SelfTestTests.m */; };
+		1775E56A23528A3400D088C2 /* PRDMeasurementView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1775E56923528A3400D088C2 /* PRDMeasurementView.m */; };
+		1775E57123528F5F00D088C2 /* PRDMeasurementPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1775E57023528F5F00D088C2 /* PRDMeasurementPresenter.m */; };
+		1775E5742352909B00D088C2 /* PRDMeasurementInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1775E5732352909B00D088C2 /* PRDMeasurementInteractor.m */; };
+		1775E57823535CEC00D088C2 /* PRDDeviceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1775E57723535CEC00D088C2 /* PRDDeviceManager.m */; };
+		1775E57B2353F15700D088C2 /* PRDMainRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1775E57A2353F15700D088C2 /* PRDMainRouter.m */; };
+		1775E57E2353F8EC00D088C2 /* PRDMainPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1775E57D2353F8EC00D088C2 /* PRDMainPresenter.m */; };
+		178F286D2356917200C58DAD /* MeasurementsHistory.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 178F286C2356917200C58DAD /* MeasurementsHistory.xcdatamodel */; };
+		178F28722356919A00C58DAD /* Measurement+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 178F28702356919A00C58DAD /* Measurement+CoreDataClass.m */; };
+		178F28732356919A00C58DAD /* Measurement+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 178F28712356919A00C58DAD /* Measurement+CoreDataProperties.m */; };
+		178F287A235698B200C58DAD /* PRDHistoryPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 178F2879235698B200C58DAD /* PRDHistoryPresenter.m */; };
+		178F287D2356996700C58DAD /* PRDHistoryInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 178F287C2356996700C58DAD /* PRDHistoryInteractor.m */; };
+		178F28802356A71900C58DAD /* PRDHistoryMeasurementTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 178F287F2356A71900C58DAD /* PRDHistoryMeasurementTableViewCell.m */; };
+		178F28832357623D00C58DAD /* PRDConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 178F28822357623D00C58DAD /* PRDConstants.m */; };
+		17E69B8C23560D4F00A61F38 /* PRDHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E69B8B23560D4F00A61F38 /* PRDHelpers.m */; };
+		17E69B8E23560E5300A61F38 /* PRDHelpersTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E69B8D23560E5300A61F38 /* PRDHelpersTests.m */; };
+		17E69B8F23560E6400A61F38 /* PRDHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E69B8B23560D4F00A61F38 /* PRDHelpers.m */; };
+		17E69B9123566ADB00A61F38 /* PRDDeviceManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E69B9023566ADB00A61F38 /* PRDDeviceManagerTests.m */; };
+		17E69B942356834200A61F38 /* PRDHistoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E69B932356834200A61F38 /* PRDHistoryView.m */; };
+		17E69B982356885D00A61F38 /* PRDCoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E69B972356885D00A61F38 /* PRDCoreDataHelper.m */; };
+		17E69B9F23568B6A00A61F38 /* PRDDatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E69B9E23568B6A00A61F38 /* PRDDatabaseManager.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1775E556235284CB00D088C2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1775E532235284C900D088C2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1775E539235284C900D088C2;
+			remoteInfo = "Predica-SelfTest";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1775E53A235284C900D088C2 /* Predica-SelfTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Predica-SelfTest.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1775E53D235284C900D088C2 /* PRDAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PRDAppDelegate.h; sourceTree = "<group>"; };
+		1775E53E235284C900D088C2 /* PRDAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PRDAppDelegate.m; sourceTree = "<group>"; };
+		1775E543235284C900D088C2 /* PRDMainView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PRDMainView.h; sourceTree = "<group>"; };
+		1775E544235284C900D088C2 /* PRDMainView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PRDMainView.m; sourceTree = "<group>"; };
+		1775E547235284C900D088C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1775E549235284CB00D088C2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1775E54C235284CB00D088C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1775E54E235284CB00D088C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1775E54F235284CB00D088C2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1775E555235284CB00D088C2 /* Predica-SelfTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Predica-SelfTestTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1775E559235284CB00D088C2 /* Predica_SelfTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Predica_SelfTestTests.m; sourceTree = "<group>"; };
+		1775E55B235284CB00D088C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1775E56823528A3400D088C2 /* PRDMeasurementView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PRDMeasurementView.h; sourceTree = "<group>"; };
+		1775E56923528A3400D088C2 /* PRDMeasurementView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PRDMeasurementView.m; sourceTree = "<group>"; };
+		1775E56B23528AF000D088C2 /* PRDMeasurementViewProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PRDMeasurementViewProtocol.h; sourceTree = "<group>"; };
+		1775E56C23528BDD00D088C2 /* PRDMeasurementEventHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PRDMeasurementEventHandler.h; sourceTree = "<group>"; };
+		1775E56D23528DD500D088C2 /* PRDMeasurementProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PRDMeasurementProvider.h; sourceTree = "<group>"; };
+		1775E56E23528E1E00D088C2 /* PRDMeasurementOutput.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PRDMeasurementOutput.h; sourceTree = "<group>"; };
+		1775E56F23528F5F00D088C2 /* PRDMeasurementPresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PRDMeasurementPresenter.h; sourceTree = "<group>"; };
+		1775E57023528F5F00D088C2 /* PRDMeasurementPresenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PRDMeasurementPresenter.m; sourceTree = "<group>"; };
+		1775E5722352909B00D088C2 /* PRDMeasurementInteractor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PRDMeasurementInteractor.h; sourceTree = "<group>"; };
+		1775E5732352909B00D088C2 /* PRDMeasurementInteractor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PRDMeasurementInteractor.m; sourceTree = "<group>"; };
+		1775E57623535CEC00D088C2 /* PRDDeviceManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PRDDeviceManager.h; sourceTree = "<group>"; };
+		1775E57723535CEC00D088C2 /* PRDDeviceManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PRDDeviceManager.m; sourceTree = "<group>"; };
+		1775E5792353F15700D088C2 /* PRDMainRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PRDMainRouter.h; sourceTree = "<group>"; };
+		1775E57A2353F15700D088C2 /* PRDMainRouter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PRDMainRouter.m; sourceTree = "<group>"; };
+		1775E57C2353F8EC00D088C2 /* PRDMainPresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PRDMainPresenter.h; sourceTree = "<group>"; };
+		1775E57D2353F8EC00D088C2 /* PRDMainPresenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PRDMainPresenter.m; sourceTree = "<group>"; };
+		1775E5802353FD0B00D088C2 /* PRDMainViewProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PRDMainViewProtocol.h; sourceTree = "<group>"; };
+		1775E5812353FDA200D088C2 /* PRDMainEventHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PRDMainEventHandler.h; sourceTree = "<group>"; };
+		178F286C2356917200C58DAD /* MeasurementsHistory.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MeasurementsHistory.xcdatamodel; sourceTree = "<group>"; };
+		178F286E2356919A00C58DAD /* Measurement+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Measurement+CoreDataProperties.h"; sourceTree = "<group>"; };
+		178F286F2356919A00C58DAD /* Measurement+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Measurement+CoreDataClass.h"; sourceTree = "<group>"; };
+		178F28702356919A00C58DAD /* Measurement+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Measurement+CoreDataClass.m"; sourceTree = "<group>"; };
+		178F28712356919A00C58DAD /* Measurement+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Measurement+CoreDataProperties.m"; sourceTree = "<group>"; };
+		178F2874235696E900C58DAD /* PRDHistoryViewProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PRDHistoryViewProtocol.h; sourceTree = "<group>"; };
+		178F2875235697E500C58DAD /* PRDHistoryEventHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PRDHistoryEventHandler.h; sourceTree = "<group>"; };
+		178F28762356980500C58DAD /* PRDHistoryOutput.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PRDHistoryOutput.h; sourceTree = "<group>"; };
+		178F28772356985F00C58DAD /* PRDHistoryProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PRDHistoryProvider.h; sourceTree = "<group>"; };
+		178F2878235698B200C58DAD /* PRDHistoryPresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PRDHistoryPresenter.h; sourceTree = "<group>"; };
+		178F2879235698B200C58DAD /* PRDHistoryPresenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PRDHistoryPresenter.m; sourceTree = "<group>"; };
+		178F287B2356996700C58DAD /* PRDHistoryInteractor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PRDHistoryInteractor.h; sourceTree = "<group>"; };
+		178F287C2356996700C58DAD /* PRDHistoryInteractor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PRDHistoryInteractor.m; sourceTree = "<group>"; };
+		178F287E2356A71900C58DAD /* PRDHistoryMeasurementTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PRDHistoryMeasurementTableViewCell.h; sourceTree = "<group>"; };
+		178F287F2356A71900C58DAD /* PRDHistoryMeasurementTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PRDHistoryMeasurementTableViewCell.m; sourceTree = "<group>"; };
+		178F28812357623D00C58DAD /* PRDConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PRDConstants.h; sourceTree = "<group>"; };
+		178F28822357623D00C58DAD /* PRDConstants.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PRDConstants.m; sourceTree = "<group>"; };
+		17E69B8A23560D4F00A61F38 /* PRDHelpers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PRDHelpers.h; sourceTree = "<group>"; };
+		17E69B8B23560D4F00A61F38 /* PRDHelpers.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PRDHelpers.m; sourceTree = "<group>"; };
+		17E69B8D23560E5300A61F38 /* PRDHelpersTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PRDHelpersTests.m; sourceTree = "<group>"; };
+		17E69B9023566ADB00A61F38 /* PRDDeviceManagerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PRDDeviceManagerTests.m; sourceTree = "<group>"; };
+		17E69B922356834200A61F38 /* PRDHistoryView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PRDHistoryView.h; sourceTree = "<group>"; };
+		17E69B932356834200A61F38 /* PRDHistoryView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PRDHistoryView.m; sourceTree = "<group>"; };
+		17E69B962356885D00A61F38 /* PRDCoreDataHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PRDCoreDataHelper.h; sourceTree = "<group>"; };
+		17E69B972356885D00A61F38 /* PRDCoreDataHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PRDCoreDataHelper.m; sourceTree = "<group>"; };
+		17E69B9D23568B6A00A61F38 /* PRDDatabaseManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PRDDatabaseManager.h; sourceTree = "<group>"; };
+		17E69B9E23568B6A00A61F38 /* PRDDatabaseManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PRDDatabaseManager.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1775E537235284C900D088C2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1775E552235284CB00D088C2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1775E531235284C900D088C2 = {
+			isa = PBXGroup;
+			children = (
+				1775E53C235284C900D088C2 /* Predica-SelfTest */,
+				1775E558235284CB00D088C2 /* Predica-SelfTestTests */,
+				1775E53B235284C900D088C2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1775E53B235284C900D088C2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1775E53A235284C900D088C2 /* Predica-SelfTest.app */,
+				1775E555235284CB00D088C2 /* Predica-SelfTestTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1775E53C235284C900D088C2 /* Predica-SelfTest */ = {
+			isa = PBXGroup;
+			children = (
+				17E69B952356884000A61F38 /* Database */,
+				1775E57523535CD300D088C2 /* Device */,
+				1775E5642352891700D088C2 /* Modules */,
+				1775E53D235284C900D088C2 /* PRDAppDelegate.h */,
+				1775E53E235284C900D088C2 /* PRDAppDelegate.m */,
+				1775E549235284CB00D088C2 /* Assets.xcassets */,
+				1775E54B235284CB00D088C2 /* LaunchScreen.storyboard */,
+				1775E54E235284CB00D088C2 /* Info.plist */,
+				1775E54F235284CB00D088C2 /* main.m */,
+				17E69B8A23560D4F00A61F38 /* PRDHelpers.h */,
+				17E69B8B23560D4F00A61F38 /* PRDHelpers.m */,
+				178F28812357623D00C58DAD /* PRDConstants.h */,
+				178F28822357623D00C58DAD /* PRDConstants.m */,
+			);
+			path = "Predica-SelfTest";
+			sourceTree = "<group>";
+		};
+		1775E558235284CB00D088C2 /* Predica-SelfTestTests */ = {
+			isa = PBXGroup;
+			children = (
+				1775E559235284CB00D088C2 /* Predica_SelfTestTests.m */,
+				1775E55B235284CB00D088C2 /* Info.plist */,
+				17E69B8D23560E5300A61F38 /* PRDHelpersTests.m */,
+				17E69B9023566ADB00A61F38 /* PRDDeviceManagerTests.m */,
+			);
+			path = "Predica-SelfTestTests";
+			sourceTree = "<group>";
+		};
+		1775E5642352891700D088C2 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				1775E57F2353F90900D088C2 /* Main View */,
+				1775E5672352894000D088C2 /* History */,
+				1775E5652352891E00D088C2 /* Measurement */,
+				1775E5792353F15700D088C2 /* PRDMainRouter.h */,
+				1775E57A2353F15700D088C2 /* PRDMainRouter.m */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		1775E5652352891E00D088C2 /* Measurement */ = {
+			isa = PBXGroup;
+			children = (
+				1775E56823528A3400D088C2 /* PRDMeasurementView.h */,
+				1775E56923528A3400D088C2 /* PRDMeasurementView.m */,
+				1775E56B23528AF000D088C2 /* PRDMeasurementViewProtocol.h */,
+				1775E56C23528BDD00D088C2 /* PRDMeasurementEventHandler.h */,
+				1775E56D23528DD500D088C2 /* PRDMeasurementProvider.h */,
+				1775E56E23528E1E00D088C2 /* PRDMeasurementOutput.h */,
+				1775E56F23528F5F00D088C2 /* PRDMeasurementPresenter.h */,
+				1775E57023528F5F00D088C2 /* PRDMeasurementPresenter.m */,
+				1775E5722352909B00D088C2 /* PRDMeasurementInteractor.h */,
+				1775E5732352909B00D088C2 /* PRDMeasurementInteractor.m */,
+			);
+			path = Measurement;
+			sourceTree = "<group>";
+		};
+		1775E5672352894000D088C2 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				17E69B922356834200A61F38 /* PRDHistoryView.h */,
+				17E69B932356834200A61F38 /* PRDHistoryView.m */,
+				178F2874235696E900C58DAD /* PRDHistoryViewProtocol.h */,
+				178F2875235697E500C58DAD /* PRDHistoryEventHandler.h */,
+				178F28762356980500C58DAD /* PRDHistoryOutput.h */,
+				178F28772356985F00C58DAD /* PRDHistoryProvider.h */,
+				178F2878235698B200C58DAD /* PRDHistoryPresenter.h */,
+				178F2879235698B200C58DAD /* PRDHistoryPresenter.m */,
+				178F287B2356996700C58DAD /* PRDHistoryInteractor.h */,
+				178F287C2356996700C58DAD /* PRDHistoryInteractor.m */,
+				178F287E2356A71900C58DAD /* PRDHistoryMeasurementTableViewCell.h */,
+				178F287F2356A71900C58DAD /* PRDHistoryMeasurementTableViewCell.m */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		1775E57523535CD300D088C2 /* Device */ = {
+			isa = PBXGroup;
+			children = (
+				1775E57623535CEC00D088C2 /* PRDDeviceManager.h */,
+				1775E57723535CEC00D088C2 /* PRDDeviceManager.m */,
+			);
+			path = Device;
+			sourceTree = "<group>";
+		};
+		1775E57F2353F90900D088C2 /* Main View */ = {
+			isa = PBXGroup;
+			children = (
+				1775E543235284C900D088C2 /* PRDMainView.h */,
+				1775E544235284C900D088C2 /* PRDMainView.m */,
+				1775E57C2353F8EC00D088C2 /* PRDMainPresenter.h */,
+				1775E57D2353F8EC00D088C2 /* PRDMainPresenter.m */,
+				1775E5802353FD0B00D088C2 /* PRDMainViewProtocol.h */,
+				1775E5812353FDA200D088C2 /* PRDMainEventHandler.h */,
+				1775E546235284C900D088C2 /* Main.storyboard */,
+			);
+			path = "Main View";
+			sourceTree = "<group>";
+		};
+		17E69B952356884000A61F38 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				17E69B992356893B00A61F38 /* Data Model */,
+				17E69B962356885D00A61F38 /* PRDCoreDataHelper.h */,
+				17E69B972356885D00A61F38 /* PRDCoreDataHelper.m */,
+				17E69B9D23568B6A00A61F38 /* PRDDatabaseManager.h */,
+				17E69B9E23568B6A00A61F38 /* PRDDatabaseManager.m */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		17E69B992356893B00A61F38 /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				178F286E2356919A00C58DAD /* Measurement+CoreDataProperties.h */,
+				178F286F2356919A00C58DAD /* Measurement+CoreDataClass.h */,
+				178F28702356919A00C58DAD /* Measurement+CoreDataClass.m */,
+				178F28712356919A00C58DAD /* Measurement+CoreDataProperties.m */,
+				178F286C2356917200C58DAD /* MeasurementsHistory.xcdatamodel */,
+			);
+			path = "Data Model";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1775E539235284C900D088C2 /* Predica-SelfTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1775E55E235284CB00D088C2 /* Build configuration list for PBXNativeTarget "Predica-SelfTest" */;
+			buildPhases = (
+				1775E536235284C900D088C2 /* Sources */,
+				1775E537235284C900D088C2 /* Frameworks */,
+				1775E538235284C900D088C2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Predica-SelfTest";
+			productName = "Predica-SelfTest";
+			productReference = 1775E53A235284C900D088C2 /* Predica-SelfTest.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1775E554235284CB00D088C2 /* Predica-SelfTestTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1775E561235284CB00D088C2 /* Build configuration list for PBXNativeTarget "Predica-SelfTestTests" */;
+			buildPhases = (
+				1775E551235284CB00D088C2 /* Sources */,
+				1775E552235284CB00D088C2 /* Frameworks */,
+				1775E553235284CB00D088C2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1775E557235284CB00D088C2 /* PBXTargetDependency */,
+			);
+			name = "Predica-SelfTestTests";
+			productName = "Predica-SelfTestTests";
+			productReference = 1775E555235284CB00D088C2 /* Predica-SelfTestTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1775E532235284C900D088C2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = PRD;
+				LastUpgradeCheck = 1100;
+				ORGANIZATIONNAME = skyisthelimit.aero;
+				TargetAttributes = {
+					1775E539235284C900D088C2 = {
+						CreatedOnToolsVersion = 11.0;
+						LastSwiftMigration = 1100;
+					};
+					1775E554235284CB00D088C2 = {
+						CreatedOnToolsVersion = 11.0;
+						TestTargetID = 1775E539235284C900D088C2;
+					};
+				};
+			};
+			buildConfigurationList = 1775E535235284C900D088C2 /* Build configuration list for PBXProject "Predica-SelfTest" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1775E531235284C900D088C2;
+			productRefGroup = 1775E53B235284C900D088C2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1775E539235284C900D088C2 /* Predica-SelfTest */,
+				1775E554235284CB00D088C2 /* Predica-SelfTestTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1775E538235284C900D088C2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1775E54D235284CB00D088C2 /* LaunchScreen.storyboard in Resources */,
+				1775E54A235284CB00D088C2 /* Assets.xcassets in Resources */,
+				1775E548235284C900D088C2 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1775E553235284CB00D088C2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1775E536235284C900D088C2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				178F286D2356917200C58DAD /* MeasurementsHistory.xcdatamodel in Sources */,
+				1775E545235284C900D088C2 /* PRDMainView.m in Sources */,
+				1775E56A23528A3400D088C2 /* PRDMeasurementView.m in Sources */,
+				1775E53F235284C900D088C2 /* PRDAppDelegate.m in Sources */,
+				17E69B982356885D00A61F38 /* PRDCoreDataHelper.m in Sources */,
+				17E69B942356834200A61F38 /* PRDHistoryView.m in Sources */,
+				178F287D2356996700C58DAD /* PRDHistoryInteractor.m in Sources */,
+				178F28802356A71900C58DAD /* PRDHistoryMeasurementTableViewCell.m in Sources */,
+				1775E550235284CB00D088C2 /* main.m in Sources */,
+				1775E57823535CEC00D088C2 /* PRDDeviceManager.m in Sources */,
+				178F287A235698B200C58DAD /* PRDHistoryPresenter.m in Sources */,
+				178F28732356919A00C58DAD /* Measurement+CoreDataProperties.m in Sources */,
+				1775E5742352909B00D088C2 /* PRDMeasurementInteractor.m in Sources */,
+				17E69B8C23560D4F00A61F38 /* PRDHelpers.m in Sources */,
+				1775E57E2353F8EC00D088C2 /* PRDMainPresenter.m in Sources */,
+				1775E57B2353F15700D088C2 /* PRDMainRouter.m in Sources */,
+				178F28832357623D00C58DAD /* PRDConstants.m in Sources */,
+				178F28722356919A00C58DAD /* Measurement+CoreDataClass.m in Sources */,
+				1775E57123528F5F00D088C2 /* PRDMeasurementPresenter.m in Sources */,
+				17E69B9F23568B6A00A61F38 /* PRDDatabaseManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1775E551235284CB00D088C2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17E69B8F23560E6400A61F38 /* PRDHelpers.m in Sources */,
+				17E69B8E23560E5300A61F38 /* PRDHelpersTests.m in Sources */,
+				17E69B9123566ADB00A61F38 /* PRDDeviceManagerTests.m in Sources */,
+				1775E55A235284CB00D088C2 /* Predica_SelfTestTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1775E557235284CB00D088C2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1775E539235284C900D088C2 /* Predica-SelfTest */;
+			targetProxy = 1775E556235284CB00D088C2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1775E546235284C900D088C2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1775E547235284C900D088C2 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1775E54B235284CB00D088C2 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1775E54C235284CB00D088C2 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1775E55C235284CB00D088C2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		1775E55D235284CB00D088C2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1775E55F235284CB00D088C2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TD73N3AVL7;
+				INFOPLIST_FILE = "Predica-SelfTest/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "aero.skyisthelimit.Predica-SelfTest";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		1775E560235284CB00D088C2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TD73N3AVL7;
+				INFOPLIST_FILE = "Predica-SelfTest/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "aero.skyisthelimit.Predica-SelfTest";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		1775E562235284CB00D088C2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TD73N3AVL7;
+				INFOPLIST_FILE = "Predica-SelfTestTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "aero.skyisthelimit.Predica-SelfTestTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Predica-SelfTest.app/Predica-SelfTest";
+			};
+			name = Debug;
+		};
+		1775E563235284CB00D088C2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TD73N3AVL7;
+				INFOPLIST_FILE = "Predica-SelfTestTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "aero.skyisthelimit.Predica-SelfTestTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Predica-SelfTest.app/Predica-SelfTest";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1775E535235284C900D088C2 /* Build configuration list for PBXProject "Predica-SelfTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1775E55C235284CB00D088C2 /* Debug */,
+				1775E55D235284CB00D088C2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1775E55E235284CB00D088C2 /* Build configuration list for PBXNativeTarget "Predica-SelfTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1775E55F235284CB00D088C2 /* Debug */,
+				1775E560235284CB00D088C2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1775E561235284CB00D088C2 /* Build configuration list for PBXNativeTarget "Predica-SelfTestTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1775E562235284CB00D088C2 /* Debug */,
+				1775E563235284CB00D088C2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1775E532235284C900D088C2 /* Project object */;
+}
