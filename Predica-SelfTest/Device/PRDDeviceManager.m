@@ -131,6 +131,7 @@ const char *kPRDDeviceManagerCentralQueue = "PRDDeviceManagerCentralQueue";
 		diastolic = CFSwapInt16BigToHost(diastolic);
 	} @catch (NSException *exception) {
 		result.readingValid = NO;
+		return result;
 	}
 
 	if(flags & pressurekPa) {
@@ -143,7 +144,14 @@ const char *kPRDDeviceManagerCentralQueue = "PRDDeviceManagerCentralQueue";
 	result.diastolic = [PRDHelpers sfloatToDouble:diastolic];
 
 	if(flags & timestampPresent) {
-		NSData *timeData = [data subdataWithRange:NSMakeRange(5, 7)];
+		NSData *timeData;
+		@try {
+			timeData = [data subdataWithRange:NSMakeRange(5, 7)];
+		} @catch (NSException *exception) {
+			result.readingValid = NO;
+			return result;
+		}
+
 		result.timestamp = [self parseTime:timeData];
 	}
 

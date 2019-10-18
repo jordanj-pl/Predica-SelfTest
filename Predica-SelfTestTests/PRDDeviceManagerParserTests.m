@@ -17,11 +17,11 @@
 
 @end
 
-@interface PRDDeviceManagerTests : XCTestCase
+@interface PRDDeviceManagerParserTests : XCTestCase
 
 @end
 
-@implementation PRDDeviceManagerTests
+@implementation PRDDeviceManagerParserTests
 
 - (void)setUp {
     // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -31,7 +31,7 @@
     // Put teardown code here. This method is called after the invocation of each test method in the class.
 }
 
-- (void)testParseDate {
+- (void)testParseDate_dataValid {
     //Given
     NSMutableData *data = [NSMutableData data];
 
@@ -70,7 +70,21 @@
     XCTAssertEqual((NSInteger)CFSwapInt16BigToHost(years), timeComponents.year);
 }
 
--(void)testParseMeasurement {
+- (void)testParseDate_dataInvalid {
+    //Given
+    NSMutableData *data = [NSMutableData data];
+
+    uint8_t someInvalidData = 0x00;
+    [data appendBytes:&someInvalidData length:1];
+
+    //When
+	NSTimeInterval timestamp = [[PRDDeviceManager new] parseTime:data];
+
+    //Then
+    XCTAssertEqual(timestamp, 0);
+}
+
+-(void)testParseMeasurement_dataValid {
 	//Given
 	NSMutableData *data = [NSMutableData new];
 
@@ -83,8 +97,6 @@
 	uint64_t timestamp = CFSwapInt64HostToBig(0x342d0e110b07e300);//17.11.2019 14:45:52
 	[data appendBytes:&timestamp length:7];
 
-	NSLog(@"DATA: %@", data);
-
 	//When
 	PRDDeviceBloodPressureMeasurement measurement = [[PRDDeviceManager new] parseMeasurementData:data];
 
@@ -94,6 +106,20 @@
 	XCTAssertEqual(measurement.systolic, 120);
 	XCTAssertEqual(measurement.diastolic, 70);
 	XCTAssertEqual(measurement.timestamp, 1573998352);
+}
+
+-(void)testParseMeasurement_dataInvalid {
+	//Given
+	NSMutableData *data = [NSMutableData new];
+
+	uint8_t someInvalidData = 0xFF;//11111111
+	[data appendBytes:&someInvalidData length:1];
+
+	//When
+	PRDDeviceBloodPressureMeasurement measurement = [[PRDDeviceManager new] parseMeasurementData:data];
+
+	//Then
+	XCTAssertFalse(measurement.readingValid);
 }
 
 @end

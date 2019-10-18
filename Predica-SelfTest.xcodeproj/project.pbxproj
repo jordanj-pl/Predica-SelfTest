@@ -30,7 +30,7 @@
 		17E69B8C23560D4F00A61F38 /* PRDHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E69B8B23560D4F00A61F38 /* PRDHelpers.m */; };
 		17E69B8E23560E5300A61F38 /* PRDHelpersTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E69B8D23560E5300A61F38 /* PRDHelpersTests.m */; };
 		17E69B8F23560E6400A61F38 /* PRDHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E69B8B23560D4F00A61F38 /* PRDHelpers.m */; };
-		17E69B9123566ADB00A61F38 /* PRDDeviceManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E69B9023566ADB00A61F38 /* PRDDeviceManagerTests.m */; };
+		17E69B9123566ADB00A61F38 /* PRDDeviceManagerParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E69B9023566ADB00A61F38 /* PRDDeviceManagerParserTests.m */; };
 		17E69B942356834200A61F38 /* PRDHistoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E69B932356834200A61F38 /* PRDHistoryView.m */; };
 		17E69B982356885D00A61F38 /* PRDCoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E69B972356885D00A61F38 /* PRDCoreDataHelper.m */; };
 		17E69B9F23568B6A00A61F38 /* PRDDatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E69B9E23568B6A00A61F38 /* PRDDatabaseManager.m */; };
@@ -98,7 +98,7 @@
 		17E69B8A23560D4F00A61F38 /* PRDHelpers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PRDHelpers.h; sourceTree = "<group>"; };
 		17E69B8B23560D4F00A61F38 /* PRDHelpers.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PRDHelpers.m; sourceTree = "<group>"; };
 		17E69B8D23560E5300A61F38 /* PRDHelpersTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PRDHelpersTests.m; sourceTree = "<group>"; };
-		17E69B9023566ADB00A61F38 /* PRDDeviceManagerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PRDDeviceManagerTests.m; sourceTree = "<group>"; };
+		17E69B9023566ADB00A61F38 /* PRDDeviceManagerParserTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PRDDeviceManagerParserTests.m; sourceTree = "<group>"; };
 		17E69B922356834200A61F38 /* PRDHistoryView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PRDHistoryView.h; sourceTree = "<group>"; };
 		17E69B932356834200A61F38 /* PRDHistoryView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PRDHistoryView.m; sourceTree = "<group>"; };
 		17E69B962356885D00A61F38 /* PRDCoreDataHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PRDCoreDataHelper.h; sourceTree = "<group>"; };
@@ -169,7 +169,7 @@
 				1775E559235284CB00D088C2 /* Predica_SelfTestTests.m */,
 				1775E55B235284CB00D088C2 /* Info.plist */,
 				17E69B8D23560E5300A61F38 /* PRDHelpersTests.m */,
-				17E69B9023566ADB00A61F38 /* PRDDeviceManagerTests.m */,
+				17E69B9023566ADB00A61F38 /* PRDDeviceManagerParserTests.m */,
 			);
 			path = "Predica-SelfTestTests";
 			sourceTree = "<group>";
@@ -400,7 +400,7 @@
 			files = (
 				17E69B8F23560E6400A61F38 /* PRDHelpers.m in Sources */,
 				17E69B8E23560E5300A61F38 /* PRDHelpersTests.m in Sources */,
-				17E69B9123566ADB00A61F38 /* PRDDeviceManagerTests.m in Sources */,
+				17E69B9123566ADB00A61F38 /* PRDDeviceManagerParserTests.m in Sources */,
 				1775E55A235284CB00D088C2 /* Predica_SelfTestTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
