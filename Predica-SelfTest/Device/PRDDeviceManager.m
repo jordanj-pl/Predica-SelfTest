@@ -8,9 +8,9 @@
 
 #import "PRDDeviceManager.h"
 
-#import "PRDHelpers.h"
-
 @import CoreBluetooth;
+
+#import "PRDBloodPressureServiceDataParser.h"
 
 NSString *kBloodPressureService = @"0x1810";
 NSString *kBloodPressureServiceCharacteristic = @"0x2A35";
@@ -103,94 +103,16 @@ const char *kPRDDeviceManagerCentralQueue = "PRDDeviceManagerCentralQueue";
 }
 
 -(void)processMeasurement:(NSData*)data {
-	PRDDeviceBloodPressureMeasurement measurement = [self parseMeasurementData:data];
+	PRDBloodPressureServiceDataParser *parser = [[PRDBloodPressureServiceDataParser alloc] initWithData:data];
+
+	PRDDeviceBloodPressureMeasurement measurement;
+	measurement.readingValid = parser.isDataValid;
+	measurement.unit = parser.unit;
+	measurement.systolic = parser.systolic;
+	measurement.diastolic = parser.diastolic;
+	measurement.timestamp = parser.timestamp;
 
 	[self.delegate didCompleteBloodPressureMeasurement:measurement];
-}
-
-#pragma mark data parsing
-
--(PRDDeviceBloodPressureMeasurement)parseMeasurementData:(NSData*)data {
-	uint8_t pressurekPa = 1 << 7;
-	uint8_t timestampPresent = 1 << 6;
-
-	PRDDeviceBloodPressureMeasurement result;
-	result.readingValid = YES;
-
-	uint8_t flags = 0x00;
-	uint16_t systolic = 0x000;
-	uint16_t diastolic = 0x000;
-
-	@try {
-		[data getBytes:&flags range:NSMakeRange(0, 1)];
-
-		[data getBytes:&systolic range:NSMakeRange(1, 2)];
-		systolic = CFSwapInt16BigToHost(systolic);
-
-		[data getBytes:&diastolic range:NSMakeRange(3, 2)];
-		diastolic = CFSwapInt16BigToHost(diastolic);
-	} @catch (NSException *exception) {
-		result.readingValid = NO;
-		return result;
-	}
-
-	if(flags & pressurekPa) {
-		result.unit = @"kPa";
-	} else {
-		result.unit = @"mmHg";
-	}
-
-	result.systolic = [PRDHelpers sfloatToDouble:systolic];
-	result.diastolic = [PRDHelpers sfloatToDouble:diastolic];
-
-	if(flags & timestampPresent) {
-		NSData *timeData;
-		@try {
-			timeData = [data subdataWithRange:NSMakeRange(5, 7)];
-		} @catch (NSException *exception) {
-			result.readingValid = NO;
-			return result;
-		}
-
-		result.timestamp = [self parseTime:timeData];
-	}
-
-	return result;
-}
-
--(NSTimeInterval)parseTime:(NSData*)data {
-
-	if(data.length != 7) {
-		return 0;
-	}
-
-	uint16_t year;
-	uint8_t month;
-	uint8_t day;
-	uint8_t hour;
-	uint8_t minute;
-	uint8_t second;
-
-	[data getBytes:&year range:NSMakeRange(5, 2)];
-	year = CFSwapInt16BigToHost(year);
-
-	[data getBytes:&month range:NSMakeRange(4, 1)];
-	[data getBytes:&day range:NSMakeRange(3, 1)];
-	[data getBytes:&hour range:NSMakeRange(2, 1)];
-	[data getBytes:&minute range:NSMakeRange(1, 1)];
-	[data getBytes:&second range:NSMakeRange(0, 1)];
-
-	NSDateComponents *date = [NSDateComponents new];
-	date.year = (NSInteger)year;
-	date.month = (NSInteger)month;
-	date.day = (NSInteger)day;
-	date.hour = (NSInteger)hour;
-	date.minute = (NSInteger)minute;
-	date.second = (NSInteger)second;
-
-	NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
-
-	return [[calendar dateFromComponents:date] timeIntervalSince1970];
 }
 
 #pragma mark - Central Manager Delegate

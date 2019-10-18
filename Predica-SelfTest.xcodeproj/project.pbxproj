@@ -27,6 +27,8 @@
 		178F287D2356996700C58DAD /* PRDHistoryInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 178F287C2356996700C58DAD /* PRDHistoryInteractor.m */; };
 		178F28802356A71900C58DAD /* PRDHistoryMeasurementTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 178F287F2356A71900C58DAD /* PRDHistoryMeasurementTableViewCell.m */; };
 		178F28832357623D00C58DAD /* PRDConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 178F28822357623D00C58DAD /* PRDConstants.m */; };
+		178F288D2359437A00C58DAD /* PRDBloodPressureServiceDataParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 178F288C2359437A00C58DAD /* PRDBloodPressureServiceDataParser.m */; };
+		17924FD9235A0F4000E82BE5 /* PRDBloodPressureServiceDataParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 178F288C2359437A00C58DAD /* PRDBloodPressureServiceDataParser.m */; };
 		17E69B8C23560D4F00A61F38 /* PRDHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E69B8B23560D4F00A61F38 /* PRDHelpers.m */; };
 		17E69B8E23560E5300A61F38 /* PRDHelpersTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E69B8D23560E5300A61F38 /* PRDHelpersTests.m */; };
 		17E69B8F23560E6400A61F38 /* PRDHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E69B8B23560D4F00A61F38 /* PRDHelpers.m */; };
@@ -95,6 +97,8 @@
 		178F287F2356A71900C58DAD /* PRDHistoryMeasurementTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PRDHistoryMeasurementTableViewCell.m; sourceTree = "<group>"; };
 		178F28812357623D00C58DAD /* PRDConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PRDConstants.h; sourceTree = "<group>"; };
 		178F28822357623D00C58DAD /* PRDConstants.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PRDConstants.m; sourceTree = "<group>"; };
+		178F288B2359437A00C58DAD /* PRDBloodPressureServiceDataParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PRDBloodPressureServiceDataParser.h; sourceTree = "<group>"; };
+		178F288C2359437A00C58DAD /* PRDBloodPressureServiceDataParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PRDBloodPressureServiceDataParser.m; sourceTree = "<group>"; };
 		17E69B8A23560D4F00A61F38 /* PRDHelpers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PRDHelpers.h; sourceTree = "<group>"; };
 		17E69B8B23560D4F00A61F38 /* PRDHelpers.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PRDHelpers.m; sourceTree = "<group>"; };
 		17E69B8D23560E5300A61F38 /* PRDHelpersTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PRDHelpersTests.m; sourceTree = "<group>"; };
@@ -166,10 +170,10 @@
 		1775E558235284CB00D088C2 /* Predica-SelfTestTests */ = {
 			isa = PBXGroup;
 			children = (
+				178F288A235942B200C58DAD /* Device */,
 				1775E559235284CB00D088C2 /* Predica_SelfTestTests.m */,
 				1775E55B235284CB00D088C2 /* Info.plist */,
 				17E69B8D23560E5300A61F38 /* PRDHelpersTests.m */,
-				17E69B9023566ADB00A61F38 /* PRDDeviceManagerParserTests.m */,
 			);
 			path = "Predica-SelfTestTests";
 			sourceTree = "<group>";
@@ -227,6 +231,8 @@
 			children = (
 				1775E57623535CEC00D088C2 /* PRDDeviceManager.h */,
 				1775E57723535CEC00D088C2 /* PRDDeviceManager.m */,
+				178F288B2359437A00C58DAD /* PRDBloodPressureServiceDataParser.h */,
+				178F288C2359437A00C58DAD /* PRDBloodPressureServiceDataParser.m */,
 			);
 			path = Device;
 			sourceTree = "<group>";
@@ -243,6 +249,14 @@
 				1775E546235284C900D088C2 /* Main.storyboard */,
 			);
 			path = "Main View";
+			sourceTree = "<group>";
+		};
+		178F288A235942B200C58DAD /* Device */ = {
+			isa = PBXGroup;
+			children = (
+				17E69B9023566ADB00A61F38 /* PRDDeviceManagerParserTests.m */,
+			);
+			path = Device;
 			sourceTree = "<group>";
 		};
 		17E69B952356884000A61F38 /* Database */ = {
@@ -388,6 +402,7 @@
 				1775E57E2353F8EC00D088C2 /* PRDMainPresenter.m in Sources */,
 				1775E57B2353F15700D088C2 /* PRDMainRouter.m in Sources */,
 				178F28832357623D00C58DAD /* PRDConstants.m in Sources */,
+				178F288D2359437A00C58DAD /* PRDBloodPressureServiceDataParser.m in Sources */,
 				178F28722356919A00C58DAD /* Measurement+CoreDataClass.m in Sources */,
 				1775E57123528F5F00D088C2 /* PRDMeasurementPresenter.m in Sources */,
 				17E69B9F23568B6A00A61F38 /* PRDDatabaseManager.m in Sources */,
@@ -402,6 +417,7 @@
 				17E69B8E23560E5300A61F38 /* PRDHelpersTests.m in Sources */,
 				17E69B9123566ADB00A61F38 /* PRDDeviceManagerParserTests.m in Sources */,
 				1775E55A235284CB00D088C2 /* Predica_SelfTestTests.m in Sources */,
+				17924FD9235A0F4000E82BE5 /* PRDBloodPressureServiceDataParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

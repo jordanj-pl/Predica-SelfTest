@@ -8,12 +8,11 @@
 
 @import XCTest;
 
-#import "PRDDeviceManager.h"
+#import "PRDBloodPressureServiceDataParser.h"
 
-@interface PRDDeviceManager ()
+@interface PRDBloodPressureServiceDataParser ()
 
 -(NSTimeInterval)parseTime:(NSData*)data;
--(PRDDeviceBloodPressureMeasurement)parseMeasurementData:(NSData*)data;
 
 @end
 
@@ -54,7 +53,8 @@
     [data appendBytes:&years length:2];
 
     //When
-	NSTimeInterval timestamp = [[PRDDeviceManager new] parseTime:data];
+	PRDBloodPressureServiceDataParser *parser = [[PRDBloodPressureServiceDataParser alloc] initWithData:[NSData new]];
+	NSTimeInterval timestamp = [parser parseTime:data];
 
     //Then
     NSDate *testTime = [NSDate dateWithTimeIntervalSince1970:timestamp];
@@ -78,7 +78,8 @@
     [data appendBytes:&someInvalidData length:1];
 
     //When
-	NSTimeInterval timestamp = [[PRDDeviceManager new] parseTime:data];
+    PRDBloodPressureServiceDataParser *parser = [[PRDBloodPressureServiceDataParser alloc] initWithData:[NSData new]];
+	NSTimeInterval timestamp = [parser parseTime:data];
 
     //Then
     XCTAssertEqual(timestamp, 0);
@@ -98,14 +99,14 @@
 	[data appendBytes:&timestamp length:7];
 
 	//When
-	PRDDeviceBloodPressureMeasurement measurement = [[PRDDeviceManager new] parseMeasurementData:data];
+	PRDBloodPressureServiceDataParser *parser = [[PRDBloodPressureServiceDataParser alloc] initWithData:data];
 
 	//Then
-	XCTAssertTrue(measurement.readingValid);
-	XCTAssertEqualObjects(measurement.unit, @"mmHg");
-	XCTAssertEqual(measurement.systolic, 120);
-	XCTAssertEqual(measurement.diastolic, 70);
-	XCTAssertEqual(measurement.timestamp, 1573998352);
+	XCTAssertTrue(parser.isDataValid);
+	XCTAssertEqualObjects(parser.unit, @"mmHg");
+	XCTAssertEqual(parser.systolic, 120);
+	XCTAssertEqual(parser.diastolic, 70);
+	XCTAssertEqual(parser.timestamp, 1573998352);
 }
 
 -(void)testParseMeasurement_dataInvalid {
@@ -116,10 +117,10 @@
 	[data appendBytes:&someInvalidData length:1];
 
 	//When
-	PRDDeviceBloodPressureMeasurement measurement = [[PRDDeviceManager new] parseMeasurementData:data];
+	PRDBloodPressureServiceDataParser *parser = [[PRDBloodPressureServiceDataParser alloc] initWithData:data];
 
 	//Then
-	XCTAssertFalse(measurement.readingValid);
+	XCTAssertFalse(parser.isDataValid);
 }
 
 @end
