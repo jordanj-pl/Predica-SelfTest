@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0225A445B880DD3926F50B95 /* Pods_Predica_SelfTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0E8BE3DE0A3CF64F0F23D25 /* Pods_Predica_SelfTest.framework */; };
 		1775E53F235284C900D088C2 /* PRDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1775E53E235284C900D088C2 /* PRDAppDelegate.m */; };
 		1775E545235284C900D088C2 /* PRDMainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1775E544235284C900D088C2 /* PRDMainView.m */; };
 		1775E548235284C900D088C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1775E546235284C900D088C2 /* Main.storyboard */; };
@@ -29,6 +30,11 @@
 		178F28832357623D00C58DAD /* PRDConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 178F28822357623D00C58DAD /* PRDConstants.m */; };
 		178F288D2359437A00C58DAD /* PRDBloodPressureServiceDataParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 178F288C2359437A00C58DAD /* PRDBloodPressureServiceDataParser.m */; };
 		17924FD9235A0F4000E82BE5 /* PRDBloodPressureServiceDataParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 178F288C2359437A00C58DAD /* PRDBloodPressureServiceDataParser.m */; };
+		17924FDC235A340F00E82BE5 /* DeviceManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17924FDB235A340F00E82BE5 /* DeviceManagerTests.swift */; };
+		17924FE6235A788E00E82BE5 /* FakeCBCentralManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 17924FE5235A788E00E82BE5 /* FakeCBCentralManager.m */; };
+		17924FE9235A78C900E82BE5 /* FakeCBPeripheral.m in Sources */ = {isa = PBXBuildFile; fileRef = 17924FE8235A78C900E82BE5 /* FakeCBPeripheral.m */; };
+		17924FEC235BB1E100E82BE5 /* FakeCBService.m in Sources */ = {isa = PBXBuildFile; fileRef = 17924FEB235BB1E100E82BE5 /* FakeCBService.m */; };
+		17924FEF235BB58000E82BE5 /* FakeCBCharacteristic.m in Sources */ = {isa = PBXBuildFile; fileRef = 17924FEE235BB58000E82BE5 /* FakeCBCharacteristic.m */; };
 		17E69B8C23560D4F00A61F38 /* PRDHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E69B8B23560D4F00A61F38 /* PRDHelpers.m */; };
 		17E69B8E23560E5300A61F38 /* PRDHelpersTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E69B8D23560E5300A61F38 /* PRDHelpersTests.m */; };
 		17E69B8F23560E6400A61F38 /* PRDHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E69B8B23560D4F00A61F38 /* PRDHelpers.m */; };
@@ -36,6 +42,7 @@
 		17E69B942356834200A61F38 /* PRDHistoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E69B932356834200A61F38 /* PRDHistoryView.m */; };
 		17E69B982356885D00A61F38 /* PRDCoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E69B972356885D00A61F38 /* PRDCoreDataHelper.m */; };
 		17E69B9F23568B6A00A61F38 /* PRDDatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E69B9E23568B6A00A61F38 /* PRDDatabaseManager.m */; };
+		CD5C8B9E69962C907B98C3C5 /* Pods_Predica_SelfTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 782B592344BA6432F077819B /* Pods_Predica_SelfTestTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +106,17 @@
 		178F28822357623D00C58DAD /* PRDConstants.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PRDConstants.m; sourceTree = "<group>"; };
 		178F288B2359437A00C58DAD /* PRDBloodPressureServiceDataParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PRDBloodPressureServiceDataParser.h; sourceTree = "<group>"; };
 		178F288C2359437A00C58DAD /* PRDBloodPressureServiceDataParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PRDBloodPressureServiceDataParser.m; sourceTree = "<group>"; };
+		17924FDA235A340F00E82BE5 /* Predica-SelfTestTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Predica-SelfTestTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		17924FDB235A340F00E82BE5 /* DeviceManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceManagerTests.swift; sourceTree = "<group>"; };
+		17924FE1235A46EF00E82BE5 /* PRDDeviceManager_private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PRDDeviceManager_private.h; sourceTree = "<group>"; };
+		17924FE4235A788E00E82BE5 /* FakeCBCentralManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FakeCBCentralManager.h; sourceTree = "<group>"; };
+		17924FE5235A788E00E82BE5 /* FakeCBCentralManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FakeCBCentralManager.m; sourceTree = "<group>"; };
+		17924FE7235A78C900E82BE5 /* FakeCBPeripheral.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FakeCBPeripheral.h; sourceTree = "<group>"; };
+		17924FE8235A78C900E82BE5 /* FakeCBPeripheral.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FakeCBPeripheral.m; sourceTree = "<group>"; };
+		17924FEA235BB1E100E82BE5 /* FakeCBService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FakeCBService.h; sourceTree = "<group>"; };
+		17924FEB235BB1E100E82BE5 /* FakeCBService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FakeCBService.m; sourceTree = "<group>"; };
+		17924FED235BB58000E82BE5 /* FakeCBCharacteristic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FakeCBCharacteristic.h; sourceTree = "<group>"; };
+		17924FEE235BB58000E82BE5 /* FakeCBCharacteristic.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FakeCBCharacteristic.m; sourceTree = "<group>"; };
 		17E69B8A23560D4F00A61F38 /* PRDHelpers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PRDHelpers.h; sourceTree = "<group>"; };
 		17E69B8B23560D4F00A61F38 /* PRDHelpers.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PRDHelpers.m; sourceTree = "<group>"; };
 		17E69B8D23560E5300A61F38 /* PRDHelpersTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PRDHelpersTests.m; sourceTree = "<group>"; };
@@ -109,6 +127,12 @@
 		17E69B972356885D00A61F38 /* PRDCoreDataHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PRDCoreDataHelper.m; sourceTree = "<group>"; };
 		17E69B9D23568B6A00A61F38 /* PRDDatabaseManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PRDDatabaseManager.h; sourceTree = "<group>"; };
 		17E69B9E23568B6A00A61F38 /* PRDDatabaseManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PRDDatabaseManager.m; sourceTree = "<group>"; };
+		2688B259F86F93967871F654 /* Pods-Predica-SelfTestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Predica-SelfTestTests.release.xcconfig"; path = "Target Support Files/Pods-Predica-SelfTestTests/Pods-Predica-SelfTestTests.release.xcconfig"; sourceTree = "<group>"; };
+		6CB311E50C9F33DEAED88254 /* Pods-Predica-SelfTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Predica-SelfTest.debug.xcconfig"; path = "Target Support Files/Pods-Predica-SelfTest/Pods-Predica-SelfTest.debug.xcconfig"; sourceTree = "<group>"; };
+		782B592344BA6432F077819B /* Pods_Predica_SelfTestTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Predica_SelfTestTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7AE1F7D6432FDE9EF8500C8 /* Pods-Predica-SelfTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Predica-SelfTest.release.xcconfig"; path = "Target Support Files/Pods-Predica-SelfTest/Pods-Predica-SelfTest.release.xcconfig"; sourceTree = "<group>"; };
+		F0E8BE3DE0A3CF64F0F23D25 /* Pods_Predica_SelfTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Predica_SelfTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9F9BFFFD5BF5DB29418F153 /* Pods-Predica-SelfTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Predica-SelfTestTests.debug.xcconfig"; path = "Target Support Files/Pods-Predica-SelfTestTests/Pods-Predica-SelfTestTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +140,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0225A445B880DD3926F50B95 /* Pods_Predica_SelfTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,18 +148,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD5C8B9E69962C907B98C3C5 /* Pods_Predica_SelfTestTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		06484E89788F5D9794727F19 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F0E8BE3DE0A3CF64F0F23D25 /* Pods_Predica_SelfTest.framework */,
+				782B592344BA6432F077819B /* Pods_Predica_SelfTestTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		1775E531235284C900D088C2 = {
 			isa = PBXGroup;
 			children = (
 				1775E53C235284C900D088C2 /* Predica-SelfTest */,
 				1775E558235284CB00D088C2 /* Predica-SelfTestTests */,
 				1775E53B235284C900D088C2 /* Products */,
+				84F104FA5B6500745FEEBA69 /* Pods */,
+				06484E89788F5D9794727F19 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -254,9 +291,28 @@
 		178F288A235942B200C58DAD /* Device */ = {
 			isa = PBXGroup;
 			children = (
+				17924FDE235A458900E82BE5 /* Mocks */,
 				17E69B9023566ADB00A61F38 /* PRDDeviceManagerParserTests.m */,
+				17924FDB235A340F00E82BE5 /* DeviceManagerTests.swift */,
+				17924FDA235A340F00E82BE5 /* Predica-SelfTestTests-Bridging-Header.h */,
+				17924FE1235A46EF00E82BE5 /* PRDDeviceManager_private.h */,
 			);
 			path = Device;
+			sourceTree = "<group>";
+		};
+		17924FDE235A458900E82BE5 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				17924FE4235A788E00E82BE5 /* FakeCBCentralManager.h */,
+				17924FE5235A788E00E82BE5 /* FakeCBCentralManager.m */,
+				17924FE7235A78C900E82BE5 /* FakeCBPeripheral.h */,
+				17924FE8235A78C900E82BE5 /* FakeCBPeripheral.m */,
+				17924FEA235BB1E100E82BE5 /* FakeCBService.h */,
+				17924FEB235BB1E100E82BE5 /* FakeCBService.m */,
+				17924FED235BB58000E82BE5 /* FakeCBCharacteristic.h */,
+				17924FEE235BB58000E82BE5 /* FakeCBCharacteristic.m */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 		17E69B952356884000A61F38 /* Database */ = {
@@ -283,6 +339,17 @@
 			path = "Data Model";
 			sourceTree = "<group>";
 		};
+		84F104FA5B6500745FEEBA69 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6CB311E50C9F33DEAED88254 /* Pods-Predica-SelfTest.debug.xcconfig */,
+				A7AE1F7D6432FDE9EF8500C8 /* Pods-Predica-SelfTest.release.xcconfig */,
+				F9F9BFFFD5BF5DB29418F153 /* Pods-Predica-SelfTestTests.debug.xcconfig */,
+				2688B259F86F93967871F654 /* Pods-Predica-SelfTestTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -290,6 +357,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1775E55E235284CB00D088C2 /* Build configuration list for PBXNativeTarget "Predica-SelfTest" */;
 			buildPhases = (
+				52E2B45741CBEB8220E60A0E /* [CP] Check Pods Manifest.lock */,
 				1775E536235284C900D088C2 /* Sources */,
 				1775E537235284C900D088C2 /* Frameworks */,
 				1775E538235284C900D088C2 /* Resources */,
@@ -307,9 +375,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1775E561235284CB00D088C2 /* Build configuration list for PBXNativeTarget "Predica-SelfTestTests" */;
 			buildPhases = (
+				60B08E7CB9456A18AA0D5F80 /* [CP] Check Pods Manifest.lock */,
 				1775E551235284CB00D088C2 /* Sources */,
 				1775E552235284CB00D088C2 /* Frameworks */,
 				1775E553235284CB00D088C2 /* Resources */,
+				D021B8E8F2648D25DB41C5B1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -337,6 +407,7 @@
 					};
 					1775E554235284CB00D088C2 = {
 						CreatedOnToolsVersion = 11.0;
+						LastSwiftMigration = 1100;
 						TestTargetID = 1775E539235284C900D088C2;
 					};
 				};
@@ -380,6 +451,70 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		52E2B45741CBEB8220E60A0E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Predica-SelfTest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		60B08E7CB9456A18AA0D5F80 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Predica-SelfTestTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D021B8E8F2648D25DB41C5B1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Predica-SelfTestTests/Pods-Predica-SelfTestTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Predica-SelfTestTests/Pods-Predica-SelfTestTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Predica-SelfTestTests/Pods-Predica-SelfTestTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1775E536235284C900D088C2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -414,8 +549,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				17E69B8F23560E6400A61F38 /* PRDHelpers.m in Sources */,
+				17924FEC235BB1E100E82BE5 /* FakeCBService.m in Sources */,
 				17E69B8E23560E5300A61F38 /* PRDHelpersTests.m in Sources */,
 				17E69B9123566ADB00A61F38 /* PRDDeviceManagerParserTests.m in Sources */,
+				17924FEF235BB58000E82BE5 /* FakeCBCharacteristic.m in Sources */,
+				17924FE9235A78C900E82BE5 /* FakeCBPeripheral.m in Sources */,
+				17924FE6235A788E00E82BE5 /* FakeCBCentralManager.m in Sources */,
+				17924FDC235A340F00E82BE5 /* DeviceManagerTests.swift in Sources */,
 				1775E55A235284CB00D088C2 /* Predica_SelfTestTests.m in Sources */,
 				17924FD9235A0F4000E82BE5 /* PRDBloodPressureServiceDataParser.m in Sources */,
 			);
@@ -563,6 +703,7 @@
 		};
 		1775E55F235284CB00D088C2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6CB311E50C9F33DEAED88254 /* Pods-Predica-SelfTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -583,6 +724,7 @@
 		};
 		1775E560235284CB00D088C2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A7AE1F7D6432FDE9EF8500C8 /* Pods-Predica-SelfTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -602,8 +744,10 @@
 		};
 		1775E562235284CB00D088C2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F9F9BFFFD5BF5DB29418F153 /* Pods-Predica-SelfTestTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TD73N3AVL7;
 				INFOPLIST_FILE = "Predica-SelfTestTests/Info.plist";
@@ -615,6 +759,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "aero.skyisthelimit.Predica-SelfTestTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Predica-SelfTestTests/Device/Predica-SelfTestTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Predica-SelfTest.app/Predica-SelfTest";
 			};
@@ -622,8 +769,10 @@
 		};
 		1775E563235284CB00D088C2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2688B259F86F93967871F654 /* Pods-Predica-SelfTestTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TD73N3AVL7;
 				INFOPLIST_FILE = "Predica-SelfTestTests/Info.plist";
@@ -635,6 +784,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "aero.skyisthelimit.Predica-SelfTestTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Predica-SelfTestTests/Device/Predica-SelfTestTests-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Predica-SelfTest.app/Predica-SelfTest";
 			};
