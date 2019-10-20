@@ -26,4 +26,8 @@
 	return self.mockedUUID;
 }
 
+-(BOOL)isNotifying {
+	return self.mockIsNotifying;
+}
+
 @end

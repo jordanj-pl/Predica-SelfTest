@@ -15,7 +15,6 @@
 @interface FakeCBPeripheral ()
 
 @property (nonatomic, strong) NSUUID *mockedUUID;
-@property (nonatomic, strong) NSArray<CBService*> *mockedServices;
 
 @end
 
@@ -32,11 +31,25 @@
 	return self.mockedUUID;
 }
 
+-(void)reset {
+	self.mockedServices = @[];
+	self.hasCompatibleServices = NO;
+	self.hasCompatibleCharacteristic = NO;
+
+	self.discoverServicesCalled = NO;
+	self.discoverCharacteristicsCalled = NO;
+	self.setNotifyValueCalled = NO;
+}
+
 -(void)discoverServices:(NSArray<CBUUID *> *)serviceUUIDs {
 	self.discoverServicesCalled = YES;
 
-	FakeCBService *service = [FakeCBService serviceWithIdentifier:serviceUUIDs.firstObject];
-	self.mockedServices = @[service];
+	if(self.hasCompatibleServices) {
+		FakeCBService *service = [FakeCBService serviceWithIdentifier:serviceUUIDs.firstObject];
+		self.mockedServices = @[service];
+	} else {
+		self.mockedServices = @[];
+	}
 
 	[self.delegate peripheral:self didDiscoverServices:nil];
 }
@@ -48,15 +61,23 @@
 -(void)discoverCharacteristics:(NSArray<CBUUID *> *)characteristicUUIDs forService:(FakeCBService *)service {
 	self.discoverCharacteristicsCalled = YES;
 
-	FakeCBCharacteristic *characteristic = [FakeCBCharacteristic characteristicWithIdentifier:[CBUUID UUIDWithString:@"0x2A35"]];
+	if(self.hasCompatibleCharacteristic) {
+		FakeCBCharacteristic *characteristic = [FakeCBCharacteristic characteristicWithIdentifier:[CBUUID UUIDWithString:@"0x2A35"]];
 
-	service.mockedCharacteristics = @[characteristic];
+		service.mockedCharacteristics = @[characteristic];
+	} else {
+		service.mockedCharacteristics = @[];
+	}
 
 	[self.delegate peripheral:self didDiscoverCharacteristicsForService:service error:nil];
 }
 
 -(void)setNotifyValue:(BOOL)enabled forCharacteristic:(CBCharacteristic *)characteristic {
 	self.setNotifyValueCalled = YES;
+
+	((FakeCBCharacteristic*)characteristic).mockIsNotifying = self.mockSetNotify;
+
+	[self.delegate peripheral:self didUpdateNotificationStateForCharacteristic:characteristic error:nil];
 }
 
 @end

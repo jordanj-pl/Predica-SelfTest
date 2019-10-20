@@ -15,6 +15,7 @@
 NSString *kBloodPressureService = @"0x1810";
 NSString *kBloodPressureServiceCharacteristic = @"0x2A35";
 const char *kPRDDeviceManagerCentralQueue = "PRDDeviceManagerCentralQueue";
+NSErrorDomain const PRDDeviceErrorDomain = (NSErrorDomain)@"BLE Error";
 
 @interface PRDDeviceManager ()<CBCentralManagerDelegate, CBPeripheralDelegate> {
 	dispatch_queue_t _centralQueue;
@@ -118,7 +119,10 @@ const char *kPRDDeviceManagerCentralQueue = "PRDDeviceManagerCentralQueue";
 #pragma mark - Central Manager Delegate
 
 -(void)centralManagerDidUpdateState:(CBCentralManager *)central {
-	NSLog(@"::>> didUpdateState: %lu", central.state);
+	//it prevents updates from fake central managers
+	if(![central isMemberOfClass:[CBCentralManager class]]) {
+		return;
+	}
 
 	if(central.state == CBManagerStatePoweredOn) {
 		self.state = PRDDeviceManagerDeviceStateBLEOn;
@@ -128,8 +132,6 @@ const char *kPRDDeviceManagerCentralQueue = "PRDDeviceManagerCentralQueue";
 }
 
 -(void)centralManager:(CBCentralManager *)central didDiscoverPeripheral:(nonnull CBPeripheral *)peripheral advertisementData:(nonnull NSDictionary<NSString *,id> *)advertisementData RSSI:(nonnull NSNumber *)RSSI {
-
-	NSLog(@"::>> peripheral: %@", peripheral);
 
 	PRDDeviceManagerDevice device;
 	device.name = peripheral.name;
@@ -150,32 +152,53 @@ const char *kPRDDeviceManagerCentralQueue = "PRDDeviceManagerCentralQueue";
 
 -(void)peripheral:(CBPeripheral *)peripheral didModifyServices:(NSArray<CBService *> *)invalidatedServices {
 	NSLog(@"didModifyServices: %@", invalidatedServices);
+	//TODO reload services and check compatibility after change
 }
 
 -(void)peripheral:(CBPeripheral *)peripheral didDiscoverServices:(NSError *)error {
-	NSLog(@"didDiscoverServices: %@", peripheral.services);
+	NSArray *services = [peripheral.services filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"UUID = %@", [CBUUID UUIDWithString:kBloodPressureService]]];
 
-	[peripheral discoverCharacteristics:nil forService:peripheral.services.firstObject];
+	if(services.count == 1 && !error) {
+		[peripheral discoverCharacteristics:nil forService:peripheral.services.firstObject];
+	} else {
+		self.state = PRDDeviceManagerDeviceStateDisconnected;
+		//TODO add error description
+		NSError *error = [NSError errorWithDomain:PRDDeviceErrorDomain code:0 userInfo:nil];
+		[self.delegate didEncounterError:error];
+	}
 }
 
 -(void)peripheral:(CBPeripheral *)peripheral didDiscoverCharacteristicsForService:(CBService *)service error:(NSError *)error {
 
-	NSLog(@"didDiscoverCharacteristicsForService: %@", service.characteristics);
-
 	NSArray *characteristics = [service.characteristics filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"UUID = %@", [CBUUID UUIDWithString:kBloodPressureServiceCharacteristic]]];
 
-	if(characteristics.count == 1) {
+	if(characteristics.count == 1 && !error) {
 		CBCharacteristic *bloodPressure = characteristics.firstObject;
 		[peripheral setNotifyValue:YES forCharacteristic:bloodPressure];
+	} else {
+		self.state = PRDDeviceManagerDeviceStateDisconnected;
+		//TODO add error description
+		NSError *error = [NSError errorWithDomain:PRDDeviceErrorDomain code:0 userInfo:nil];
+		[self.delegate didEncounterError:error];
+	}
+}
 
+-(void)peripheral:(CBPeripheral *)peripheral didUpdateNotificationStateForCharacteristic:(nonnull CBCharacteristic *)characteristic error:(nullable NSError *)error {
+
+	if([characteristic.UUID isEqual:[CBUUID UUIDWithString:kBloodPressureServiceCharacteristic]] && characteristic.isNotifying  && !error) {
 		//Connected is set when device is ready to process read requests.
 		self.state = PRDDeviceManagerDeviceStateConnected;
+	} else {
+		self.state = PRDDeviceManagerDeviceStateDisconnected;
+		//TODO add error description
+		NSError *error = [NSError errorWithDomain:PRDDeviceErrorDomain code:0 userInfo:nil];
+		[self.delegate didEncounterError:error];
 	}
 }
 
 -(void)peripheral:(CBPeripheral *)peripheral didUpdateValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error {
 
-	if([characteristic.UUID isEqual:[CBUUID UUIDWithString:kBloodPressureServiceCharacteristic]]) {
+	if([characteristic.UUID isEqual:[CBUUID UUIDWithString:kBloodPressureServiceCharacteristic]] && !error) {
 		[self processMeasurement:characteristic.value];
 	}
 }

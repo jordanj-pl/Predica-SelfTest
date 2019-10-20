@@ -16,7 +16,15 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) BOOL discoverCharacteristicsCalled;
 @property (nonatomic, assign) BOOL setNotifyValueCalled;
 
+@property (nonatomic, assign) BOOL hasCompatibleServices;
+@property (nonatomic, assign) BOOL hasCompatibleCharacteristic;
+@property (nonatomic, assign) BOOL mockSetNotify;
+
+@property (nonatomic, strong) NSArray<CBService*> *mockedServices;
+
 +(FakeCBPeripheral*)peripheralWithIdentifier:(NSUUID*)identifier;
+
+-(void)reset;
 
 @end
 

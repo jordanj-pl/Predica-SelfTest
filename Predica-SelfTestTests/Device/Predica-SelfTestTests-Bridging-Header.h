@@ -7,3 +7,7 @@
 
 #import "FakeCBCentralManager.h"
 #import "FakeCBPeripheral.h"
+#import "FakeCBService.h"
+#import "FakeCBCharacteristic.h"
+
+#import "MockPRDDeviceManagerDelegate.h"

@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface FakeCBCharacteristic : CBCharacteristic
 
+@property (nonatomic, assign) BOOL mockIsNotifying;
+
 +(FakeCBCharacteristic*)characteristicWithIdentifier:(CBUUID*)identifier;
 
 @end

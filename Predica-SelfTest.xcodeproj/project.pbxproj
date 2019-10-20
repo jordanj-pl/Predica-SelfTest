@@ -35,6 +35,7 @@
 		17924FE9235A78C900E82BE5 /* FakeCBPeripheral.m in Sources */ = {isa = PBXBuildFile; fileRef = 17924FE8235A78C900E82BE5 /* FakeCBPeripheral.m */; };
 		17924FEC235BB1E100E82BE5 /* FakeCBService.m in Sources */ = {isa = PBXBuildFile; fileRef = 17924FEB235BB1E100E82BE5 /* FakeCBService.m */; };
 		17924FEF235BB58000E82BE5 /* FakeCBCharacteristic.m in Sources */ = {isa = PBXBuildFile; fileRef = 17924FEE235BB58000E82BE5 /* FakeCBCharacteristic.m */; };
+		17924FF4235CAADC00E82BE5 /* MockPRDDeviceManagerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 17924FF3235CAADC00E82BE5 /* MockPRDDeviceManagerDelegate.m */; };
 		17E69B8C23560D4F00A61F38 /* PRDHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E69B8B23560D4F00A61F38 /* PRDHelpers.m */; };
 		17E69B8E23560E5300A61F38 /* PRDHelpersTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E69B8D23560E5300A61F38 /* PRDHelpersTests.m */; };
 		17E69B8F23560E6400A61F38 /* PRDHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E69B8B23560D4F00A61F38 /* PRDHelpers.m */; };
@@ -117,6 +118,8 @@
 		17924FEB235BB1E100E82BE5 /* FakeCBService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FakeCBService.m; sourceTree = "<group>"; };
 		17924FED235BB58000E82BE5 /* FakeCBCharacteristic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FakeCBCharacteristic.h; sourceTree = "<group>"; };
 		17924FEE235BB58000E82BE5 /* FakeCBCharacteristic.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FakeCBCharacteristic.m; sourceTree = "<group>"; };
+		17924FF2235CAADC00E82BE5 /* MockPRDDeviceManagerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MockPRDDeviceManagerDelegate.h; sourceTree = "<group>"; };
+		17924FF3235CAADC00E82BE5 /* MockPRDDeviceManagerDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MockPRDDeviceManagerDelegate.m; sourceTree = "<group>"; };
 		17E69B8A23560D4F00A61F38 /* PRDHelpers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PRDHelpers.h; sourceTree = "<group>"; };
 		17E69B8B23560D4F00A61F38 /* PRDHelpers.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PRDHelpers.m; sourceTree = "<group>"; };
 		17E69B8D23560E5300A61F38 /* PRDHelpersTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PRDHelpersTests.m; sourceTree = "<group>"; };
@@ -311,6 +314,8 @@
 				17924FEB235BB1E100E82BE5 /* FakeCBService.m */,
 				17924FED235BB58000E82BE5 /* FakeCBCharacteristic.h */,
 				17924FEE235BB58000E82BE5 /* FakeCBCharacteristic.m */,
+				17924FF2235CAADC00E82BE5 /* MockPRDDeviceManagerDelegate.h */,
+				17924FF3235CAADC00E82BE5 /* MockPRDDeviceManagerDelegate.m */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -548,6 +553,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17924FF4235CAADC00E82BE5 /* MockPRDDeviceManagerDelegate.m in Sources */,
 				17E69B8F23560E6400A61F38 /* PRDHelpers.m in Sources */,
 				17924FEC235BB1E100E82BE5 /* FakeCBService.m in Sources */,
 				17E69B8E23560E5300A61F38 /* PRDHelpersTests.m in Sources */,
