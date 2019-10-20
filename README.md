@@ -12,7 +12,7 @@ Recruitment task from Predica.
 
 ## Working with mocked device
 
-Please note that at the time of writing the code I did not have real BLE device serving as blood pressure monitor. The imlementation bases on service documentation from bluetooth.com as well as BLE blood pressure monitor described in BLP_v1.0.1.pdf.
+Please note that at the time of writing the code I did not have real BLE device serving as blood pressure monitor. The implementation bases on service documentation from bluetooth.com as well as BLE blood pressure monitor described in BLP_v1.0.1.pdf.
 
 Exemplary test data to be used with BLE device emulator e.g. LightBlue 0x40100c1007342d0e110b07e3. These 12-byte data contains following information encoded (as per org.bluetooth.characteristic.blood_pressure_measurement):
 - 0x40 - flags: 01000000 i.e. unit mmHg, timestamp is present, remaining flags are not set;
@@ -22,5 +22,6 @@ Exemplary test data to be used with BLE device emulator e.g. LightBlue 0x40100c1
 
 ## Notes
 
-Please note that this is just demo made purely as recruitment tasks. There are lot of thing to be done in order to use in production environment especially exception handling.
+Please note that this is just demo made purely as recruitment task. There are lot of things to be done in order to use in production environment especially exception handling.
+This app has been tested on iPhone 10 running iOS 13.1.3.
  
