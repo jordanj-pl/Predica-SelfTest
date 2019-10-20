@@ -30,6 +30,7 @@
 #pragma clang diagnostic pop
 
 -(void)parseMeasurementData:(NSData*)data {
+	NSLog(@"DATA: %@", data);
 	uint8_t pressurekPa = 1 << 7;
 	uint8_t timestampPresent = 1 << 6;
 
