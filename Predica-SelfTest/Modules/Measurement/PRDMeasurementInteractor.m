@@ -17,6 +17,7 @@
 @interface PRDMeasurementInteractor ()<PRDDeviceManagerDelegate>
 
 @property (nonatomic, strong) PRDDeviceManager *deviceManager;
+@property (nonatomic, assign) BOOL scanAndConnectWhenReady;
 
 @end
 
@@ -32,11 +33,15 @@
 }
 
 -(void)findAndConnect {
-	[self.deviceManager scanForCompatibleDevices];
+	if(self.deviceManager.state == PRDDeviceManagerDeviceStateBLEOn) {
+		[self.deviceManager scanForCompatibleDevices];
+	} else {
+		self.scanAndConnectWhenReady = YES;
+	}
 }
 
 -(void)requestDeviceStatus {
-	//TODO
+	[self.output receiveDeviceStatus:(PRDDeviceStatus)self.deviceManager.state];
 }
 
 -(void)requestMeasurement {
@@ -47,6 +52,11 @@
 
 -(void)didUpdateDeviceState:(PRDDeviceManagerDeviceState)state {
 	[self.output receiveDeviceStatus:(PRDDeviceStatus)state];
+
+	if(state == PRDDeviceManagerDeviceStateBLEOn && self.scanAndConnectWhenReady) {
+		self.scanAndConnectWhenReady = NO;
+		[self findAndConnect];
+	}
 }
 
 -(void)didFindDevice:(PRDDeviceManagerDevice)device {

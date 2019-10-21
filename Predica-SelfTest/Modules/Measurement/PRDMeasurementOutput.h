@@ -18,6 +18,7 @@ typedef struct {
 
 typedef enum {
 	PRDDeviceStatusBLEOff = 0,
+	PRDDeviceStatusBLEUnauthorised,
 	PRDDeviceStatusBLEOn,
 	PRDDeviceStatusFinding,
 	PRDDeviceStatusConnecting,

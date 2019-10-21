@@ -17,7 +17,7 @@
 }
 
 -(void)updateDeviceStatus {
-//TODO
+	[self.provider requestDeviceStatus];
 }
 
 -(void)updateMeasurement {
@@ -53,6 +53,9 @@
 
 			case PRDDeviceStatusBLEOn:
 				txtStatus = @"Bluetooth On";
+				break;
+			case PRDDeviceStatusBLEUnauthorised:
+				txtStatus = @"BLE Unauthorised";
 				break;
 
 			case PRDDeviceStatusFinding:

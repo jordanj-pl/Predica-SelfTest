@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 typedef enum {
 	PRDDeviceManagerDeviceStateBLEOff = 0,//BLE is OFF or unavailable for other reasons
+	PRDDeviceManagerDeviceStateBLEUnauthorised,//No permission to use Bluetooth
 	PRDDeviceManagerDeviceStateBLEOn, //BLE is on and read
 	PRDDeviceManagerDeviceStateFinding, //Scanning for devices
 	PRDDeviceManagerDeviceStateConnecting, //Connecting to device

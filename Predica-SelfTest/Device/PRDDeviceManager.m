@@ -124,11 +124,20 @@ NSErrorDomain const PRDDeviceErrorDomain = (NSErrorDomain)@"BLE Error";
 		return;
 	}
 
-	if(central.state == CBManagerStatePoweredOn) {
-		self.state = PRDDeviceManagerDeviceStateBLEOn;
-	} else {
-		self.state = PRDDeviceManagerDeviceStateBLEOff;
+	switch (central.state) {
+		case CBManagerStatePoweredOn:
+			self.state = PRDDeviceManagerDeviceStateBLEOn;
+			break;
+
+		case CBManagerStateUnauthorized:
+			self.state = PRDDeviceManagerDeviceStateBLEUnauthorised;
+			break;
+
+		default:
+			self.state = PRDDeviceManagerDeviceStateBLEOff;
+			break;
 	}
+
 }
 
 -(void)centralManager:(CBCentralManager *)central didDiscoverPeripheral:(nonnull CBPeripheral *)peripheral advertisementData:(nonnull NSDictionary<NSString *,id> *)advertisementData RSSI:(nonnull NSNumber *)RSSI {
