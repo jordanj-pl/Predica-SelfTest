@@ -72,7 +72,7 @@
 -(void)didCompleteBloodPressureMeasurement:(PRDDeviceBloodPressureMeasurement)measurement {
 
 	if(!measurement.readingValid) {
-		//TODO handle error
+		[self.output receiveError:PRDMeasurementErrorInvalidMeasurement];
 		return;
 	}
 
@@ -98,7 +98,7 @@
 }
 
 - (void)didEncounterError:(nonnull NSError *)error {
-	//TODO
+	[self.output receiveError:PRDMeasurementErrorConnectivityIssue];
 }
 
 

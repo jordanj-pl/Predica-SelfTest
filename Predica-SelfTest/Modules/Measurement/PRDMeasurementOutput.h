@@ -17,6 +17,11 @@ typedef struct {
 } PRDMeasurement;
 
 typedef enum {
+	PRDMeasurementErrorInvalidMeasurement = 1,
+	PRDMeasurementErrorConnectivityIssue = 2,
+} PRDMeasurementError;
+
+typedef enum {
 	PRDDeviceStatusBLEOff = 0,
 	PRDDeviceStatusBLEUnauthorised,
 	PRDDeviceStatusBLEOn,
@@ -31,7 +36,7 @@ typedef enum {
 -(void)receiveDeviceStatus:(PRDDeviceStatus)status;
 -(void)receiveDeviceName:(NSString*)name;
 -(void)receiveMeasurement:(PRDMeasurement)measurement;
-
+-(void)receiveError:(PRDMeasurementError)error;
 
 @end
 

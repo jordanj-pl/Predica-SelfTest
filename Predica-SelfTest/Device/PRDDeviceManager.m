@@ -80,14 +80,16 @@ NSErrorDomain const PRDDeviceErrorDomain = (NSErrorDomain)@"BLE Error";
 
 -(void)requestMeasurement {
 	if(!self.currentPeripheral) {
-		//TODO consider error handling
+		//TODO specify error
+		[self.delegate didEncounterError:[NSError errorWithDomain:PRDDeviceErrorDomain code:0 userInfo:nil]];
 		return;
 	}
 
 	NSArray *services = [self.currentPeripheral.services filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"UUID = %@", [CBUUID UUIDWithString:kBloodPressureService]]];
 
 	if(services.count != 1) {
-		//TODO add error handling
+		//TODO specify error
+		[self.delegate didEncounterError:[NSError errorWithDomain:PRDDeviceErrorDomain code:0 userInfo:nil]];
 		return;
 	}
 
@@ -95,7 +97,8 @@ NSErrorDomain const PRDDeviceErrorDomain = (NSErrorDomain)@"BLE Error";
 	NSArray *characteristics = [service.characteristics filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"UUID = %@", [CBUUID UUIDWithString:kBloodPressureServiceCharacteristic]]];
 
 	if(characteristics.count != 1) {
-		//TODO add error handling
+		//TODO specify error
+		[self.delegate didEncounterError:[NSError errorWithDomain:PRDDeviceErrorDomain code:0 userInfo:nil]];
 		return;
 	}
 
@@ -209,6 +212,10 @@ NSErrorDomain const PRDDeviceErrorDomain = (NSErrorDomain)@"BLE Error";
 
 	if([characteristic.UUID isEqual:[CBUUID UUIDWithString:kBloodPressureServiceCharacteristic]] && !error) {
 		[self processMeasurement:characteristic.value];
+	} else if(error) {
+		//TODO add error description
+		NSError *error = [NSError errorWithDomain:PRDDeviceErrorDomain code:0 userInfo:nil];
+		[self.delegate didEncounterError:error];
 	}
 }
 

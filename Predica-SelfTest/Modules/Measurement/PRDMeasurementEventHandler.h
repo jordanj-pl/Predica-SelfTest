@@ -14,6 +14,7 @@
 -(void)connectWithFirstCompatibleDevice;
 -(void)updateDeviceStatus;
 -(void)updateMeasurement;
+-(void)didHideError;
 
 @end
 

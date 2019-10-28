@@ -18,6 +18,8 @@
 @property (nonatomic, weak) IBOutlet UIButton *updateButton;
 @property (nonatomic, strong) IBOutletCollection(UILabel) NSArray *pressureUnitLabels;
 
+@property (nonatomic, weak) IBOutlet UIView *errorView;
+
 @end
 
 @implementation PRDMeasurementView
@@ -75,6 +77,32 @@
 
 -(void)setUpdateButtonEnabled:(BOOL)enabled {
 	self.updateButton.enabled = enabled;
+	self.updateButton.backgroundColor = enabled ? [UIColor systemBlueColor] : [UIColor grayColor];
+}
+
+-(void)showError:(NSString *)title message:(NSString *)msg {
+
+	UILabel *titleLabel = [self.errorView viewWithTag:990001];
+	UILabel *msgLabel = [self.errorView viewWithTag:990002];
+	titleLabel.text = title;
+	msgLabel.text = msg;
+
+	[UIView animateWithDuration:0.8 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+		self.errorView.alpha = 1.0;
+		[self layoutIfNeeded];
+	} completion: ^(bool completed) {
+		if(completed) {
+			[UIView animateWithDuration:0.8 delay:10 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+					self.errorView.alpha = 0.0;
+					[self layoutIfNeeded];
+			} completion:^(bool completed) {
+				if(completed) {
+					[self.eventHandler didHideError];
+				}
+			}];
+		}
+	}];
+
 }
 
 @end

@@ -18,6 +18,7 @@
 -(void)setPressureUnit:(NSString*)unit;
 -(void)setTime:(NSString*)time;
 -(void)setUpdateButtonEnabled:(BOOL)enabled;
+-(void)showError:(NSString*)title message:(NSString*)msg;
 
 @end
 
